@@ -495,6 +495,8 @@ def guardar_datos_actualizados(path:str, lista:list, key, key2, key3, key4, key5
 # venta de productos, la misma esté condicionada por el stock disponible, si no
 # hay stock disponible el programa debe informarle al usuario y sugerir que
 # compre menos cantidad, en caso de que el stock sea superior a cero.
+
+#HECHO EN LA FUNCION realizar_compras()
 #--------------------------------------------------------------------------------------------------------------------------------------
 # C. Agregar opción stock por marca: Pedirle al usuario una marca y
 # mostrar el stock total de los productos de esa marca.
