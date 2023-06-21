@@ -259,6 +259,7 @@ def realizar_compras(lista:list, key:str, key2:str, key3:str, key4:str, key5:str
                                 if cantidad > 0:
                                     if item[key6] >= cantidad:
                                         productos.append({key3:item[key4], "Cantidad":cantidad, key5:float(item[key5])*float(cantidad)})
+                                        item[key6] -= cantidad
                                         break
                                     elif item[key6] == 0:
                                         print("PRODUCTO SIN STOCK")
@@ -499,6 +500,7 @@ def guardar_datos_actualizados(path:str, lista:list, key, key2, key3, key4, key5
 # mostrar el stock total de los productos de esa marca.
 
 def mostrar_stock_marca(lista:list, key:str, key2:str, key3:str, key4:str, key5:str):
+    stock_total = 0
     marca = input("Ingrese la marca que desee buscar: ").lower()
     marca_buscada = buscar_insumo(lista, key3, marca)
     if marca_buscada:
@@ -513,6 +515,8 @@ ID                Nombre                           Marca                  Precio
 
         for item in lista:
             print(f"{item[key]:^2s}    {item[key2]:^32s}     {item[key3]:^25s}      ${item[key4]:.2f}           {item[key5]:<350} ")
+            stock_total += item[key5]
+        print(f"Stock total de los productos: {stock_total}")
 
 #--------------------------------------------------------------------------------------------------------------------------------------
 # D. Agregar opción imprimir bajo stock. Que imprima en un archivo de
